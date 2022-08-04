@@ -34,6 +34,21 @@ a {
   color: inherit;
 }
 
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-pale);
+}
+
+
 /* special class */
 .highlight {
   color: var(--highlight);
@@ -68,6 +83,7 @@ nav {
   backdrop-filter: blur(13px);
   -webkit-backdrop-filter: blur(30px);
   position: sticky;
+  z-index: 200;
   top: 0;
   left: 0;
   height: 13vh;
@@ -82,7 +98,7 @@ nav .logo {
   font-weight: 700;
   font-size: 2.5rem;
   background-color: var(--highlight);
-  background: linear-gradient(90deg, var(--highlight) 6%, rgba(100, 255, 218, 0.8) 62%);
+  background: linear-gradient(90deg, var(--highlight) 6%, var(--text-pale) 62%);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
@@ -112,7 +128,7 @@ nav .nav-links {
 }
 
 .nav-links.open {
-  transform: scale(1);
+  right: 0;
 }
 
 .nav-links li {
@@ -160,15 +176,16 @@ nav #menu-toggle {
 
   nav .nav-links {
     padding: 1rem 3rem;
-    transform: scale(0);
-    transform-origin: top right;
-    transition: transform 0.2s;
+    /* transform: scale(0); */
+    /* transform-origin: top center; */
+    /* transform: translateY(-120%); */
+    transition: right 0.4s ease;
     border-radius: 3px;
     position: absolute;
     background-color: var(--secondary-bg);
     flex-direction: column;
     top: 10vh;
-    right: 2.5rem;
+    right: -100%;
   }
 
   .nav-links li {
@@ -185,7 +202,7 @@ main {
   color: var(--text-secondary);
   margin-top: 3rem;
   font-size: 1.2rem;
-  padding: 0 3rem;
+  padding: 0 1.5rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -295,17 +312,17 @@ main {
 
 /* about me section */
 .about-me {
-  background-color: var(--secondary-bg);
+  /* background-color: var(--secondary-bg); */
   margin: 13rem 0;
   width: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
 } 
 
 .about-me p {
   margin-bottom: 1rem;
   width: 100%;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.07rem;
 }
 
 .about-me .about-me-body {
@@ -316,30 +333,52 @@ main {
 }
 
 .about-me-content {
-  width: 60%;
-  /* flex-grow: 1; */
+  /* max-width: 80%; */
+  width: 100%;
+  /* background-color: red; */
+  flex-grow: 1;
   margin-bottom: 4rem;
-  /* padding-right: 5rem; */
   /* background-color: rgb(83, 223, 190); */
 }
 
+@media screen and (min-width: 1000px) {
+  .about-me-content {
+    /* padding-right: 5rem; */
+    flex-grow: 0;
+    max-width: 50%;
+  }
+}
+
+
+
+/* .tech-stack {
+  position: relative;
+} */
+
+.stacks {
+  max-width: 90%;
+  width: 100%;
+  column-count: 2;
+  position: relative;
+  left: 1rem;
+}
+
 .stacks li {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-bottom: 0.7rem;
   letter-spacing: 1px;
 }
 
 
-.stacks {
-  column-count: 2;
-}
 
 .profile-image {
-  width: 17rem;
+  max-width: 17rem;
+  margin-right: 2rem;
+  width: 100%;
   position: relative;
   cursor: pointer;
   height: fit-content;
-  border-radius: 3px;
+  border-radius: 5px;
   z-index: 10;
 }
 
@@ -352,14 +391,17 @@ main {
   border-radius: inherit;
 }
 
+
 .profile-image::before {
   background-color: var(--highlight);
-  opacity: 0.75;
+  opacity: 0.95;
   mix-blend-mode: multiply;
 }
 
+
 .profile-image::after {
   z-index: -1;
+  max-width: 100%;
   background-color: transparent;
   border: 2px solid var(--highlight);
   top: 15px;
@@ -369,6 +411,15 @@ main {
 .image-wrapper {
   border-radius: inherit;
   overflow: hidden;
+}
+
+.image-wrapper::after {
+  z-index: -1;
+  max-width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--highlight);
+  top: 15px;
+  left: 15px;
 }
 
 .profile-image img {
