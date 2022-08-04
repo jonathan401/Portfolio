@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --main-bg: rgb(10, 25, 47);
+  --secondary-bg: rgb(23, 42, 69);
+  --text-primary: rgb(230, 241, 255);
+  --text-secondary: rgb(168, 178, 209);
+  --text-pale: rgb(136, 146, 176);
+  --highlight: rgb(100, 255, 218);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg);
+  overflow-x: hidden;
+}
+
+h2 {
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* special class */
+.highlight {
+  color: var(--highlight);
+}
+
+.btn {
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  padding: 1rem 1.8rem;
+  border-radius: 3px;
+  background-color: var(--highlight);
+  font-size: 1rem;
+  transition: background-color 0.1s ease;
+}
+
+.btn-outlined {
+  background-color: transparent;
+  border: 1px solid var(--highlight);
+  color: var(--highlight);
+}
+
+.btn-outlined:hover {
+  box-shadow: 0 0 7px var(--highlight);
+}
+
+/* special class */
+
+nav {
+  /* background-color: rgba(48, 60, 85, 0); */
+  background-color: rgba(10, 25, 47, 0.8);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(30px);
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 13vh;
+  color: #fff;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-weight: 700;
+  font-size: 2.5rem;
+  background-color: var(--highlight);
+  background: linear-gradient(90deg, var(--highlight) 6%, rgba(100, 255, 218, 0.8) 62%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 3s infinite;
+}
+
+/* background animation */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+nav .nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-links.open {
+  transform: scale(1);
+}
+
+.nav-links li {
+  color: var(--text-primary);
+  margin: 0 0.7rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.nav-links li:hover {
+  color: var(--highlight);
+}
+
+/* .nav-links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: inherit;
+} */
+
+#theme-switch:hover  {
+  background-color: var(--secondary-bg);
+}
+
+nav #menu-toggle {
+  height: 25px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: var(--secondary-bg);
+  cursor: pointer;
+  display: none;
+}
+
+ /* smaller screens */
+ @media screen and (max-width: 850px) {
+
+  nav #menu-toggle {
+    display: block;
+  }
+
+  nav .nav-links {
+    padding: 1rem 3rem;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.2s;
+    border-radius: 3px;
+    position: absolute;
+    background-color: var(--secondary-bg);
+    flex-direction: column;
+    top: 10vh;
+    right: 2.5rem;
+  }
+
+  .nav-links li {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    /* color: #fff; */
+  }
+}
+
+/* main content */
+main {
+  color: var(--text-secondary);
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  padding: 0 3rem;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    padding: 0 6rem;
+    /* max-width: 900px; */
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    padding: 0 9rem;
+  }
+}
+
+/* introduction */
+
+.introduction {
+  /* background-color: var(--secondary-bg); */
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.introduction .greet {
+  margin-bottom: 0.9rem;
+  font-size: 1.1rem;
+}
+
+.introduction .name {
+  padding-bottom: 1.2rem;
+}
+
+.introduction h1 {
+  /* font-size: 3.7rem; */
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  color: var(--text-primary);
+}
+
+.introduction h2 {
+  color: var(--text-pale);
+  font-size: 1.6rem;
+}
+
+.introduction .me {
+  margin-top: 1.5rem;
+}
+
+.introduction .me p {
+  margin-bottom: 0.5rem;
+}
+
+.introduction .music-icon {
+  display: none;
+  margin-left: 0.3rem;
+  animation: bounce 0.7s 0.5s infinite linear alternate;
+}
+
+/* music icon animation */
+@keyframes bounce {
+  to {
+    transform: translateY(5px);
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .introduction .music-icon {
+    display: inline-block;
+  }
+}
+
+.introduction .hire-me {
+  margin-top: 4rem;
+}
+
+/* media query for introduction */
+@media screen and (min-width: 720px) {
+  .introduction {
+    max-width: 800px;
+  }
+
+  .introduction h1 {
+    font-size: 3rem;
+  }
+
+  .introduction h2 {
+    font-size: 2.6rem;
+  }
+
+}
+
+@media screen and  (min-width: 850px) {
+  .introduction h1 {
+    font-size: 4.3rem;
+  }
+
+  .introduction h2 {
+    font-size: 3.5rem;
+  }
+}
+
+
+/* about me section */
+.about-me {
+  background-color: var(--secondary-bg);
+  margin: 13rem 0;
+  width: 100%;
+  padding: 2rem;
+} 
+
+.about-me p {
+  margin-bottom: 1rem;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.about-me .about-me-body {
+  margin-top: 2.7rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-me-content {
+  width: 60%;
+  /* flex-grow: 1; */
+  margin-bottom: 4rem;
+  /* padding-right: 5rem; */
+  /* background-color: rgb(83, 223, 190); */
+}
+
+.stacks li {
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+}
+
+
+.stacks {
+  column-count: 2;
+}
+
+.profile-image {
+  width: 17rem;
+  position: relative;
+  cursor: pointer;
+  height: fit-content;
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.profile-image::before,
+.profile-image::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.profile-image::before {
+  background-color: var(--highlight);
+  opacity: 0.75;
+  mix-blend-mode: multiply;
+}
+
+.profile-image::after {
+  z-index: -1;
+  background-color: transparent;
+  border: 2px solid var(--highlight);
+  top: 15px;
+  left: 15px;
+}
+
+.image-wrapper {
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  display: block;
+}
+
+
+
+
+
+
+
+
+

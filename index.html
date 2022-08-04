@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h1 class="logo">John</h1>
+      <ul class="nav-links" aria-label="navigation links">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Portfolio</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+        <li id="theme-switch" aria-label="switch theme">
+          <img src="./assets/images/sun.svg" alt="" />
+        </li>
+      </ul>
+      <div id="menu-toggle"></div>
+    </nav>
+    <main>
+      <section class="introduction" aria-label="introduction">
+        <p class="highlight greet">Hi there!</p>
+        <div class="name">
+          <h1>John Oluwalusi</h1>
+          <h2>I love building things with code.</h2>
+        </div>
+        <div class="me">
+          <p>I&apos;m a <span class="highlight">passionate</span> developer</p>
+          <p>
+            I occasionaly <span class="highlight">build</span> stuffs with code
+          </p>
+          <p>
+            A lover of good books and music
+            <img
+              src="./assets/images/music.svg"
+              class="music-icon"
+              aria-hidden="true"
+            />
+          </p>
+        </div>
+        <div aria-label="hire me" class="hire-me">
+          <button class="btn btn-outlined">Hire me</button>
+        </div>
+      </section>
+      <section class="about-me">
+        <h2>About Me</h2>
+        <div class="about-me-body">
+          <div class="about-me-content">
+            <p>
+              Howdy! I&apos;m John Oluwalusi. A web & mobile app developer, who
+              enjoys building, learning and exploring things that live on the
+              web.
+            </p>
+            <p>
+              I'm currently working as a
+              <span class="hightlight">Mobile Frontend Engineer</span> at
+              <a class="highlight" href="https://github.com/input-output-hk"
+                >Input Output -</a
+              >
+              Nigeria's payment product suite for businesses, where I'm a part
+              of our payments mobile <span class="highlight">app</span> team.
+            </p>
+            <div class="tech-stack">
+              <p>Here are a few technologies I love working on:</p>
+              <ul class="stacks">
+                <li>ReactJs</li>
+                <li>React Native</li>
+                <li>Scala</li>
+                <li>Typescript</li>
+                <li>Java</li>
+                <li>Python</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-image">
+            <div class="image-wrapper">
+              <img src="./assets/images/John.jpg" alt="John Oluwalusi" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
