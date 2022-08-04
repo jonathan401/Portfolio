@@ -128,7 +128,7 @@ nav .nav-links {
 }
 
 .nav-links.open {
-  right: 5%;
+  transform: scale(1);
 }
 
 .nav-links li {
@@ -170,16 +170,15 @@ nav #menu-toggle {
 
   nav .nav-links {
     padding: 1rem 3rem;
-    /* transform: scale(0); */
-    /* transform-origin: top center; */
-    /* transform: translateY(-120%); */
-    transition: right 0.4s ease;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.1s ease;
     border-radius: 3px;
     position: absolute;
     background-color: var(--secondary-bg);
     flex-direction: column;
     top: 10vh;
-    right: -100%;
+    right: 2.5rem;
   }
 
   .nav-links li {
