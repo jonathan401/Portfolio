@@ -128,7 +128,7 @@ nav .nav-links {
 }
 
 .nav-links.open {
-  right: 0;
+  right: 5%;
 }
 
 .nav-links li {
@@ -147,12 +147,6 @@ nav .nav-links {
 .nav-links li:hover {
   color: var(--highlight);
 }
-
-/* .nav-links a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: inherit;
-} */
 
 #theme-switch:hover  {
   background-color: var(--secondary-bg);
