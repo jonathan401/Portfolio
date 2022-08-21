@@ -2,4 +2,4 @@ Portfolio (still in process)...
 
 # Inspiration
 
-[Ayush Gupta's personal portfolio website](https://ayushgupta.tech/)
+[Brittany Chiang's personal portfolio website](https://brittanychiang.com/)
