@@ -1,5 +1,5 @@
 Portfolio (still in process)...
 
-# Inspiration
+### Inspiration
 
-[Brittany Chiang's personal portfolio website](https://brittanychiang.com/)
+[Brittany Chiang's portfolio website](https://brittanychiang.com/)
