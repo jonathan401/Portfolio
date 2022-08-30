@@ -228,8 +228,7 @@ main {
   padding-bottom: 1.2rem;
 }
 
-.introduction h1 {
-  /* font-size: 3.7rem; */
+.introduction
   font-size: 2.2rem;
   text-transform: capitalize;
   color: var(--text-primary);
@@ -250,21 +249,14 @@ main {
 }
 
 .introduction .music-icon {
-  display: none;
-  margin-left: 0.3rem;
-  animation: bounce 0.7s 0.5s infinite linear alternate;
+    display: inline-block;
+    animation: bounce 0.7s 0.5s infinite linear alternate;
 }
 
 /* music icon animation */
 @keyframes bounce {
   to {
     transform: translateY(5px);
-  }
-}
-
-@media screen and (min-width: 450px) {
-  .introduction .music-icon {
-    display: inline-block;
   }
 }
 
